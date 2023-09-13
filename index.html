@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文件夹图片展示</title>
+    <style>
+        /* 在这里添加您的CSS样式,用于控制布局 */
+        
+        .folder {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        
+        .folder img {
+            width: 100px;
+            height: 100px;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="folder-container">
+        <!-- 这里将使用JavaScript来动态生成文件夹和图片 -->
+    </div>
+
+    <script>
+        // 获取文件夹目录和图片
+        const folders = [{
+            "name": "\u7cd6\u5c3f\u75c5\u6027\u89c6\u7f51\u819c\u75c5\u53d8",
+            "images": [
+                "1.png",
+                "10.png",
+                "11.png",
+                "12.png",
+                "13.png",
+                "14.png",
+                "15.png",
+                "16.png",
+                "17.png",
+                "18.png",
+                "19.png",
+                "2.png",
+                "20.png",
+                "21.png",
+                "22.png",
+                "23.png",
+                "24.png",
+                "25.png",
+                "26.png",
+                "27.png",
+                "28.png",
+                "29.png",
+                "3.png",
+                "30.png",
+                "4.png",
+                "5.png",
+                "6.png",
+                "7.png",
+                "8.png",
+                "9.png"
+            ]
+        }, {
+            "name": "\u8001\u5e74\u6e7f\u6027\u9ec4\u6591\u53d8\u6027",
+            "images": [
+                "1.png",
+                "10.png",
+                "11.png",
+                "12.png",
+                "13.png",
+                "14.png",
+                "15.png",
+                "16.png",
+                "17.png",
+                "18.png",
+                "19.png",
+                "2.png",
+                "20.png",
+                "21.png",
+                "22.png",
+                "23.png",
+                "24.png",
+                "25.png",
+                "26.png",
+                "27.png",
+                "28.png",
+                "29.png",
+                "3.png",
+                "30.png",
+                "4.png",
+                "5.png",
+                "6.png",
+                "7.png",
+                "8.png",
+                "9.png"
+            ]
+        }, {
+            "name": "\u89c6\u7f51\u819c\u52a8\u8109\u963b\u585e",
+            "images": [
+                "1.png",
+                "10.png",
+                "11.png",
+                "12.png",
+                "13.png",
+                "14.png",
+                "15.png",
+                "16.png",
+                "17.png",
+                "18.png",
+                "19.png",
+                "2.png",
+                "20.png",
+                "21.png",
+                "22.png",
+                "23.png",
+                "24.png",
+                "25.png",
+                "26.png",
+                "27.png",
+                "28.png",
+                "29.png",
+                "3.png",
+                "30.png",
+                "4.png",
+                "5.png",
+                "6.png",
+                "7.png",
+                "8.png",
+                "9.png"
+            ]
+        }, {
+            "name": "\u89c6\u7f51\u819c\u8131\u79bb",
+            "images": [
+                "1.png",
+                "10.png",
+                "11.png",
+                "12.png",
+                "13.png",
+                "14.png",
+                "15.png",
+                "16.png",
+                "17.png",
+                "18.png",
+                "19.png",
+                "2.png",
+                "20.png",
+                "21.png",
+                "22.png",
+                "23.png",
+                "24.png",
+                "25.png",
+                "26.png",
+                "27.png",
+                "28.png",
+                "29.png",
+                "3.png",
+                "30.png",
+                "4.png",
+                "5.png",
+                "6.png",
+                "7.png",
+                "8.png",
+                "9.png"
+            ]
+        }, {
+            "name": "\u89c6\u7f51\u819c\u8272\u7d20\u53d8\u6027",
+            "images": [
+                "1.png",
+                "10.png",
+                "11.png",
+                "12.png",
+                "13.png",
+                "14.png",
+                "15.png",
+                "16.png",
+                "17.png",
+                "18.png",
+                "19.png",
+                "2.png",
+                "20.png",
+                "21.png",
+                "22.png",
+                "23.png",
+                "24.png",
+                "25.png",
+                "26.png",
+                "27.png",
+                "28.png",
+                "29.png",
+                "3.png",
+                "30.png",
+                "4.png",
+                "5.png",
+                "6.png",
+                "7.png",
+                "8.png",
+                "9.png"
+            ]
+        }, {
+            "name": "\u89c6\u7f51\u819c\u9759\u8109\u963b\u585e",
+            "images": [
+                "1.png",
+                "10.png",
+                "11.png",
+                "12.png",
+                "13.png",
+                "14.png",
+                "15.png",
+                "16.png",
+                "17.png",
+                "18.png",
+                "19.png",
+                "2.png",
+                "20.png",
+                "21.png",
+                "22.png",
+                "23.png",
+                "24.png",
+                "25.png",
+                "26.png",
+                "27.png",
+                "28.png",
+                "29.png",
+                "3.png",
+                "30.png",
+                "4.png",
+                "5.png",
+                "6.png",
+                "7.png",
+                "8.png",
+                "9.png"
+            ]
+        }, {
+            "name": "\u9752\u5149\u773c",
+            "images": [
+                "1.png",
+                "10.png",
+                "11.png",
+                "12.png",
+                "13.png",
+                "14.png",
+                "15.png",
+                "16.png",
+                "17.png",
+                "18.png",
+                "19.png",
+                "2.png",
+                "20.png",
+                "21.png",
+                "22.png",
+                "23.png",
+                "24.png",
+                "25.png",
+                "26.png",
+                "27.png",
+                "28.png",
+                "29.png",
+                "3.png",
+                "30.png",
+                "4.png",
+                "5.png",
+                "6.png",
+                "7.png",
+                "8.png",
+                "9.png"
+            ]
+        }, {
+            "name": "\u9ad8\u5ea6\u8fd1\u89c6\u6027\u89c6\u7f51\u819c\u75c5\u53d8",
+            "images": [
+                "1.png",
+                "10.png",
+                "11.png",
+                "12.png",
+                "13.png",
+                "14.png",
+                "15.png",
+                "16.png",
+                "17.png",
+                "18.png",
+                "19.png",
+                "2.png",
+                "20.png",
+                "21.png",
+                "22.png",
+                "23.png",
+                "24.png",
+                "25.png",
+                "26.png",
+                "27.png",
+                "28.png",
+                "29.png",
+                "3.png",
+                "30.png",
+                "4.png",
+                "5.png",
+                "6.png",
+                "7.png",
+                "8.png",
+                "9.png"
+            ]
+        }, {
+            "name": "\u9ec4\u6591\u88c2\u5b54",
+            "images": [
+                "1.png",
+                "10.png",
+                "11.png",
+                "12.png",
+                "13.png",
+                "14.png",
+                "15.png",
+                "16.png",
+                "17.png",
+                "18.png",
+                "19.png",
+                "2.png",
+                "20.png",
+                "21.png",
+                "22.png",
+                "23.png",
+                "24.png",
+                "25.png",
+                "26.png",
+                "27.png",
+                "28.png",
+                "29.png",
+                "3.png",
+                "30.png",
+                "4.png",
+                "5.png",
+                "6.png",
+                "7.png",
+                "8.png",
+                "9.png"
+            ]
+        }];
+
+        // 获取文件夹容器
+        const folderContainer = document.getElementById("folder-container");
+
+        // 遍历文件夹并生成HTML
+        folders.forEach(folder => {
+            const folderDiv = document.createElement("div");
+            folderDiv.className = "folder";
+            folderDiv.innerHTML = `<h2>${folder.name}</h2>`;
+
+            // 遍历文件夹中的图片
+            folder.images.forEach(image => {
+                const img = document.createElement("img");
+                img.src = folder.name + "/" + image;
+                folderDiv.appendChild(img);
+            });
+
+            folderContainer.appendChild(folderDiv);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,361 +1,486 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<script>
+	// 获取文件夹目录和图片
+	const folders = [{
+		"name": "\u6b63\u5e38\u4eba",
+		"images": [
+			"10\u3002.png",
+			"136\u3002.png",
+			"166\u3002.png",
+			"178\u3002.png",
+			"186\u3002.png",
+			"19\u3002.png",
+			"210\u3002.png",
+			"222\u3002.png",
+			"240\u3002.png",
+			"24\u3002.png",
+			"26\u3002.png",
+			"2\u3002.png",
+			"33\u3002.png",
+			"35\u3002.png",
+			"38\u3002.png",
+			"44\u3002.png",
+			"46\u3002.png",
+			"4\u3002.png",
+			"55\u3002.png",
+			"56\u3002.png",
+			"5\u3002.png",
+			"66\u3002.png",
+			"69\u3002.png",
+			"77\u3002.png",
+			"78\u3002.png",
+			"80\u3002.png",
+			"88\u3002.png",
+			"8\u3002.png",
+			"93\u3002.png",
+			"99\u3002.png"
+		]
+	}, {
+		"name": "\u7cd6\u5c3f\u75c5\u6027\u89c6\u7f51\u819c\u75c5\u53d8",
+		"images": [
+			"1.png",
+			"10.png",
+			"11.png",
+			"12.png",
+			"13.png",
+			"14.png",
+			"15.png",
+			"16.png",
+			"17.png",
+			"18.png",
+			"19.png",
+			"2.png",
+			"20.png",
+			"21.png",
+			"22.png",
+			"23.png",
+			"24.png",
+			"25.png",
+			"26.png",
+			"27.png",
+			"28.png",
+			"29.png",
+			"3.png",
+			"30.png",
+			"4.png",
+			"5.png",
+			"6.png",
+			"7.png",
+			"8.png",
+			"9.png"
+		]
+	}, {
+		"name": "\u8001\u5e74\u6e7f\u6027\u9ec4\u6591\u53d8\u6027",
+		"images": [
+			"1.png",
+			"10.png",
+			"11.png",
+			"12.png",
+			"13.png",
+			"14.png",
+			"15.png",
+			"16.png",
+			"17.png",
+			"18.png",
+			"19.png",
+			"2.png",
+			"20.png",
+			"21.png",
+			"22.png",
+			"23.png",
+			"24.png",
+			"25.png",
+			"26.png",
+			"27.png",
+			"28.png",
+			"29.png",
+			"3.png",
+			"30.png",
+			"4.png",
+			"5.png",
+			"6.png",
+			"7.png",
+			"8.png",
+			"9.png"
+		]
+	}, {
+		"name": "\u89c6\u7f51\u819c\u52a8\u8109\u963b\u585e",
+		"images": [
+			"1.png",
+			"10.png",
+			"11.png",
+			"12.png",
+			"13.png",
+			"14.png",
+			"15.png",
+			"16.png",
+			"17.png",
+			"18.png",
+			"19.png",
+			"2.png",
+			"20.png",
+			"21.png",
+			"22.png",
+			"23.png",
+			"24.png",
+			"25.png",
+			"26.png",
+			"27.png",
+			"28.png",
+			"29.png",
+			"3.png",
+			"30.png",
+			"4.png",
+			"5.png",
+			"6.png",
+			"7.png",
+			"8.png",
+			"9.png"
+		]
+	}, {
+		"name": "\u89c6\u7f51\u819c\u8131\u79bb",
+		"images": [
+			"1.png",
+			"10.png",
+			"11.png",
+			"12.png",
+			"13.png",
+			"14.png",
+			"15.png",
+			"16.png",
+			"17.png",
+			"18.png",
+			"19.png",
+			"2.png",
+			"20.png",
+			"21.png",
+			"22.png",
+			"23.png",
+			"24.png",
+			"25.png",
+			"26.png",
+			"27.png",
+			"28.png",
+			"29.png",
+			"3.png",
+			"30.png",
+			"4.png",
+			"5.png",
+			"6.png",
+			"7.png",
+			"8.png",
+			"9.png"
+		]
+	}, {
+		"name": "\u89c6\u7f51\u819c\u8272\u7d20\u53d8\u6027",
+		"images": [
+			"1.png",
+			"10.png",
+			"11.png",
+			"12.png",
+			"13.png",
+			"14.png",
+			"15.png",
+			"16.png",
+			"17.png",
+			"18.png",
+			"19.png",
+			"2.png",
+			"20.png",
+			"21.png",
+			"22.png",
+			"23.png",
+			"24.png",
+			"25.png",
+			"26.png",
+			"27.png",
+			"28.png",
+			"29.png",
+			"3.png",
+			"30.png",
+			"4.png",
+			"5.png",
+			"6.png",
+			"7.png",
+			"8.png",
+			"9.png"
+		]
+	}, {
+		"name": "\u89c6\u7f51\u819c\u9759\u8109\u963b\u585e",
+		"images": [
+			"1.png",
+			"10.png",
+			"11.png",
+			"12.png",
+			"13.png",
+			"14.png",
+			"15.png",
+			"16.png",
+			"17.png",
+			"18.png",
+			"19.png",
+			"2.png",
+			"20.png",
+			"21.png",
+			"22.png",
+			"23.png",
+			"24.png",
+			"25.png",
+			"26.png",
+			"27.png",
+			"28.png",
+			"29.png",
+			"3.png",
+			"30.png",
+			"4.png",
+			"5.png",
+			"6.png",
+			"7.png",
+			"8.png",
+			"9.png"
+		]
+	}, {
+		"name": "\u9752\u5149\u773c",
+		"images": [
+			"1.png",
+			"10.png",
+			"11.png",
+			"12.png",
+			"13.png",
+			"14.png",
+			"15.png",
+			"16.png",
+			"17.png",
+			"18.png",
+			"19.png",
+			"2.png",
+			"20.png",
+			"21.png",
+			"22.png",
+			"23.png",
+			"24.png",
+			"25.png",
+			"26.png",
+			"27.png",
+			"28.png",
+			"29.png",
+			"3.png",
+			"30.png",
+			"4.png",
+			"5.png",
+			"6.png",
+			"7.png",
+			"8.png",
+			"9.png"
+		]
+	}, {
+		"name": "\u9ad8\u5ea6\u8fd1\u89c6\u6027\u89c6\u7f51\u819c\u75c5\u53d8",
+		"images": [
+			"1.png",
+			"10.png",
+			"11.png",
+			"12.png",
+			"13.png",
+			"14.png",
+			"15.png",
+			"16.png",
+			"17.png",
+			"18.png",
+			"19.png",
+			"2.png",
+			"20.png",
+			"21.png",
+			"22.png",
+			"23.png",
+			"24.png",
+			"25.png",
+			"26.png",
+			"27.png",
+			"28.png",
+			"29.png",
+			"3.png",
+			"30.png",
+			"4.png",
+			"5.png",
+			"6.png",
+			"7.png",
+			"8.png",
+			"9.png"
+		]
+	}, {
+		"name": "\u9ec4\u6591\u88c2\u5b54",
+		"images": [
+			"1.png",
+			"10.png",
+			"11.png",
+			"12.png",
+			"13.png",
+			"14.png",
+			"15.png",
+			"16.png",
+			"17.png",
+			"18.png",
+			"19.png",
+			"2.png",
+			"20.png",
+			"21.png",
+			"22.png",
+			"23.png",
+			"24.png",
+			"25.png",
+			"26.png",
+			"27.png",
+			"28.png",
+			"29.png",
+			"3.png",
+			"30.png",
+			"4.png",
+			"5.png",
+			"6.png",
+			"7.png",
+			"8.png",
+			"9.png"
+		]
+	}];
+</script>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>文件夹图片展示</title>
-    <style>
-        /* 在这里添加您的CSS样式,用于控制布局 */
-        
-        .folder {
-            margin: 10px;
-            padding: 10px;
-            border: 1px solid #ccc;
-        }
-        
-        .folder img {
-            width: 100px;
-            height: 100px;
-            margin: 5px;
-        }
-    </style>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, initial-scale=1.0">
+	<title>文件夹图片展示</title>
+	<style>
+		/* 在这里添加您的CSS样式,用于控制布局 */
+		h2 {
+			color: blue;
+			font-size: 31px;
+		}
+
+		#folder-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: auto;
+		}
+
+		.folder {
+			width: 80vw;
+			display: flex;
+			margin: 10px;
+			padding: 10px;
+			border: 1px solid #ccc;
+			flex-direction: column;
+			align-content: center;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.folder img {
+			width: 500px;
+			height: 500px;
+			margin: 5px;
+		}
+
+
+		button {
+			padding: 17px 40px;
+			border-radius: 50px;
+			border: solid 1px blue;
+			background-color: white;
+			box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+			letter-spacing: 1.5px;
+			text-transform: uppercase;
+			font-size: 15px;
+			transition: all .5s ease;
+		}
+
+		button:hover {
+			/*鼠标变手*/
+			cursor: pointer;
+
+			letter-spacing: 3px;
+			background-color: hsl(261deg 80% 48%);
+			color: hsl(0, 0%, 100%);
+			box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+		}
+
+		button:active {
+			letter-spacing: 3px;
+			background-color: hsl(261deg 80% 48%);
+			color: hsl(0, 0%, 100%);
+			box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+			transform: translateY(10px);
+			transition: 100ms;
+		}
+
+		.btn-c {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			gap: 10px;
+			width: 50vw;
+			border: solid 1px blue;
+			border-radius: 10px;
+			padding: 20px;
+			margin: auto;
+			justify-content: center;
+		}
+	</style>
 </head>
 
 <body>
-    <div id="folder-container">
-        <!-- 这里将使用JavaScript来动态生成文件夹和图片 -->
-    </div>
+<div class="btn-c">
 
-    <script>
-        // 获取文件夹目录和图片
-        const folders = [{
-            "name": "\u7cd6\u5c3f\u75c5\u6027\u89c6\u7f51\u819c\u75c5\u53d8",
-            "images": [
-                "1.png",
-                "10.png",
-                "11.png",
-                "12.png",
-                "13.png",
-                "14.png",
-                "15.png",
-                "16.png",
-                "17.png",
-                "18.png",
-                "19.png",
-                "2.png",
-                "20.png",
-                "21.png",
-                "22.png",
-                "23.png",
-                "24.png",
-                "25.png",
-                "26.png",
-                "27.png",
-                "28.png",
-                "29.png",
-                "3.png",
-                "30.png",
-                "4.png",
-                "5.png",
-                "6.png",
-                "7.png",
-                "8.png",
-                "9.png"
-            ]
-        }, {
-            "name": "\u8001\u5e74\u6e7f\u6027\u9ec4\u6591\u53d8\u6027",
-            "images": [
-                "1.png",
-                "10.png",
-                "11.png",
-                "12.png",
-                "13.png",
-                "14.png",
-                "15.png",
-                "16.png",
-                "17.png",
-                "18.png",
-                "19.png",
-                "2.png",
-                "20.png",
-                "21.png",
-                "22.png",
-                "23.png",
-                "24.png",
-                "25.png",
-                "26.png",
-                "27.png",
-                "28.png",
-                "29.png",
-                "3.png",
-                "30.png",
-                "4.png",
-                "5.png",
-                "6.png",
-                "7.png",
-                "8.png",
-                "9.png"
-            ]
-        }, {
-            "name": "\u89c6\u7f51\u819c\u52a8\u8109\u963b\u585e",
-            "images": [
-                "1.png",
-                "10.png",
-                "11.png",
-                "12.png",
-                "13.png",
-                "14.png",
-                "15.png",
-                "16.png",
-                "17.png",
-                "18.png",
-                "19.png",
-                "2.png",
-                "20.png",
-                "21.png",
-                "22.png",
-                "23.png",
-                "24.png",
-                "25.png",
-                "26.png",
-                "27.png",
-                "28.png",
-                "29.png",
-                "3.png",
-                "30.png",
-                "4.png",
-                "5.png",
-                "6.png",
-                "7.png",
-                "8.png",
-                "9.png"
-            ]
-        }, {
-            "name": "\u89c6\u7f51\u819c\u8131\u79bb",
-            "images": [
-                "1.png",
-                "10.png",
-                "11.png",
-                "12.png",
-                "13.png",
-                "14.png",
-                "15.png",
-                "16.png",
-                "17.png",
-                "18.png",
-                "19.png",
-                "2.png",
-                "20.png",
-                "21.png",
-                "22.png",
-                "23.png",
-                "24.png",
-                "25.png",
-                "26.png",
-                "27.png",
-                "28.png",
-                "29.png",
-                "3.png",
-                "30.png",
-                "4.png",
-                "5.png",
-                "6.png",
-                "7.png",
-                "8.png",
-                "9.png"
-            ]
-        }, {
-            "name": "\u89c6\u7f51\u819c\u8272\u7d20\u53d8\u6027",
-            "images": [
-                "1.png",
-                "10.png",
-                "11.png",
-                "12.png",
-                "13.png",
-                "14.png",
-                "15.png",
-                "16.png",
-                "17.png",
-                "18.png",
-                "19.png",
-                "2.png",
-                "20.png",
-                "21.png",
-                "22.png",
-                "23.png",
-                "24.png",
-                "25.png",
-                "26.png",
-                "27.png",
-                "28.png",
-                "29.png",
-                "3.png",
-                "30.png",
-                "4.png",
-                "5.png",
-                "6.png",
-                "7.png",
-                "8.png",
-                "9.png"
-            ]
-        }, {
-            "name": "\u89c6\u7f51\u819c\u9759\u8109\u963b\u585e",
-            "images": [
-                "1.png",
-                "10.png",
-                "11.png",
-                "12.png",
-                "13.png",
-                "14.png",
-                "15.png",
-                "16.png",
-                "17.png",
-                "18.png",
-                "19.png",
-                "2.png",
-                "20.png",
-                "21.png",
-                "22.png",
-                "23.png",
-                "24.png",
-                "25.png",
-                "26.png",
-                "27.png",
-                "28.png",
-                "29.png",
-                "3.png",
-                "30.png",
-                "4.png",
-                "5.png",
-                "6.png",
-                "7.png",
-                "8.png",
-                "9.png"
-            ]
-        }, {
-            "name": "\u9752\u5149\u773c",
-            "images": [
-                "1.png",
-                "10.png",
-                "11.png",
-                "12.png",
-                "13.png",
-                "14.png",
-                "15.png",
-                "16.png",
-                "17.png",
-                "18.png",
-                "19.png",
-                "2.png",
-                "20.png",
-                "21.png",
-                "22.png",
-                "23.png",
-                "24.png",
-                "25.png",
-                "26.png",
-                "27.png",
-                "28.png",
-                "29.png",
-                "3.png",
-                "30.png",
-                "4.png",
-                "5.png",
-                "6.png",
-                "7.png",
-                "8.png",
-                "9.png"
-            ]
-        }, {
-            "name": "\u9ad8\u5ea6\u8fd1\u89c6\u6027\u89c6\u7f51\u819c\u75c5\u53d8",
-            "images": [
-                "1.png",
-                "10.png",
-                "11.png",
-                "12.png",
-                "13.png",
-                "14.png",
-                "15.png",
-                "16.png",
-                "17.png",
-                "18.png",
-                "19.png",
-                "2.png",
-                "20.png",
-                "21.png",
-                "22.png",
-                "23.png",
-                "24.png",
-                "25.png",
-                "26.png",
-                "27.png",
-                "28.png",
-                "29.png",
-                "3.png",
-                "30.png",
-                "4.png",
-                "5.png",
-                "6.png",
-                "7.png",
-                "8.png",
-                "9.png"
-            ]
-        }, {
-            "name": "\u9ec4\u6591\u88c2\u5b54",
-            "images": [
-                "1.png",
-                "10.png",
-                "11.png",
-                "12.png",
-                "13.png",
-                "14.png",
-                "15.png",
-                "16.png",
-                "17.png",
-                "18.png",
-                "19.png",
-                "2.png",
-                "20.png",
-                "21.png",
-                "22.png",
-                "23.png",
-                "24.png",
-                "25.png",
-                "26.png",
-                "27.png",
-                "28.png",
-                "29.png",
-                "3.png",
-                "30.png",
-                "4.png",
-                "5.png",
-                "6.png",
-                "7.png",
-                "8.png",
-                "9.png"
-            ]
-        }];
 
-        // 获取文件夹容器
-        const folderContainer = document.getElementById("folder-container");
+	<!-- 10个按钮 -->
+	<button id="btn-1">正常人</button>
+	<button id="btn-2">糖尿病性视网膜病变</button>
+	<button id="btn-3">老年湿性黄斑变性</button>
+	<button id="btn-4">视网膜动脉阻塞</button>
+	<button id="btn-5">视网膜脱离</button>
+	<button id="btn-6">视网膜色素变性</button>
+	<button id="btn-7">视网膜静脉阻塞</button>
+	<button id="btn-8">青光眼</button>
+	<button id="btn-9">高度近视性视网膜病变</button>
+	<button id="btn-10">黄斑裂孔</button>
+</div>
 
-        // 遍历文件夹并生成HTML
-        folders.forEach(folder => {
-            const folderDiv = document.createElement("div");
-            folderDiv.className = "folder";
-            folderDiv.innerHTML = `<h2>${folder.name}</h2>`;
 
-            // 遍历文件夹中的图片
-            folder.images.forEach(image => {
-                const img = document.createElement("img");
-                img.src = folder.name + "/" + image;
-                folderDiv.appendChild(img);
-            });
+<div id="folder-container">
+	<!-- 这里将使用JavaScript来动态生成文件夹和图片 -->
+</div>
 
-            folderContainer.appendChild(folderDiv);
-        });
-    </script>
+<script>
+
+	const folderContainer = document.getElementById("folder-container");
+
+	// 获取id为btn开头的所有按钮
+	const buttons = document.querySelectorAll("[id^=btn]");
+	// 给所有按钮添加点击事件，输出他们的id
+	buttons.forEach(button => {
+		button.addEventListener("click", () => {
+			folderContainer.innerHTML = "";
+			const id = button.id.slice(4);
+			const folderData = folders[id - 1];
+			// 生成一个随机数，位于0和folderData.length之间
+			const random = Math.floor(Math.random() * folderData.images.length);
+
+			// 输出
+			console.log(folderData);
+			console.log("random", random);
+			console.log(folderData[random]);
+			const image = folderData.images[random];
+			const folderDiv = document.createElement("div");
+			folderDiv.className = "folder";
+			folderDiv.innerHTML = `<h2>${folderData.name}</h2>`;
+			const img = document.createElement("img");
+			img.src = folderData.name + "/" + image;
+			folderDiv.appendChild(img);
+			folderContainer.append(folderDiv);
+		});
+	});
+
+</script>
 </body>
 
 </html>
